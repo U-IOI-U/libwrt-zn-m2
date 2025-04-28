@@ -1,4 +1,4 @@
-name: IPQ50XX-LEDE
+name: IPQ60XX-LEDE
 
 on:
   workflow_dispatch:
@@ -9,13 +9,13 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede.git
   REPO_BRANCH: master
   FEEDS_CONF: feeds/xxx.txt
-  CONFIG_FILE: configs/ipq50xx-lede.config
+  CONFIG_FILE: configs/ipq60xx-lede.config
   DIY_SCRIPT: diy-script.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ50XX-LEDE
+  FIRMWARE_TAG: IPQ60XX-LEDE
   TZ: Asia/Shanghai
 
 jobs:
@@ -173,8 +173,7 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 CMCC RAX3000Q
-          - 无法启动!
+          ### 📒 ZN M2
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
