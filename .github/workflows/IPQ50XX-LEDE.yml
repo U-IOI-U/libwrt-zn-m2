@@ -173,8 +173,8 @@ jobs:
         artifacts: ${{ env.FIRMWARE_PATH }}/*
         body: |
           **This is OpenWrt Firmware for ${{ env.FIRMWARE_TAG }}**
-          ### 📒 固件信息24.10(无WIFI,无USB)
-          - 无WIFI,无USB,带有线NSS的6.12内核固件
+          ### 📒 CMCC RAX3000Q
+          - 无法启动!
           - 💻 这是 ${{ env.FIRMWARE_TAG }} 平台使用的 OpenWrt 固件
           - ⚽ 固件源码: ${{ env.REPO_URL }}
           - 💝 源码分支: ${{ env.REPO_BRANCH }}
