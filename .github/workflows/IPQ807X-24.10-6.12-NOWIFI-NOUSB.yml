@@ -7,8 +7,8 @@ on:
 
 env:
   REPO_URL: https://github.com/LiBwrt/openwrt-6.x.git
-  REPO_BRANCH: kernel-6.12
-# REPO_COMMIT: 09ddce12770406f2d5df62fb6fa439ffb0674f90
+  REPO_BRANCH: k6.12-nss
+  REPO_COMMIT: ''
   FEEDS_CONF: feeds/24.10-6.12.txt
   CONFIG_FILE: configs/ipq807x-6.12-nowifi-nousb.config
   DIY_SCRIPT: diy-script.sh
@@ -121,10 +121,10 @@ jobs:
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
-        echo "CONFIG_ARM64_CONTPTE=y" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
-        echo "CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
-        echo "# CONFIG_TRANSPARENT_HUGEPAGE_MADVISE is not set" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
-        echo "# CONFIG_TRANSPARENT_HUGEPAGE_NEVER is not set" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
+        # echo "CONFIG_ARM64_CONTPTE=y" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
+        # echo "CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
+        # echo "# CONFIG_TRANSPARENT_HUGEPAGE_MADVISE is not set" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
+        # echo "# CONFIG_TRANSPARENT_HUGEPAGE_NEVER is not set" >> $OPENWRT_PATH/target/linux/qualcommax/ipq807x/config-default
 
     - name: Download DL Package(下载DL软件包)
       run: |
